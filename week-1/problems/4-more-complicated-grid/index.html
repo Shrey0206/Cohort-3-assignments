@@ -1,71 +1,80 @@
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid Layout</title>
-    <style>
-        .container {
-            width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 10px;
-        }
+  <style>
+    body {
+      margin: 0;
+    }
 
-        .left {
-            background-color: red;
-        }
+    .container {
+      width: 1200px;
+      margin: 0 auto;
+      display: flex;
+    }
+    .left {
+      flex: 1;
+      background: red;
+      padding: 30px;
+      color: black;
+    }
 
-        .right {
-            background-color: blue;
-        }
-        .vertical-center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-        .horizontal-center {
-            margin: 0 auto;
-        }
-        .grid1 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-    </style>
+    .left h1 {
+      text-align: center;
+    }
+    .right {
+      flex: 2; 
+      background: blue;
+      display: flex;
+      padding: 30px;
+      gap: 40px;
+    }
+
+    .column {
+      flex: 1;
+      color: black;
+    }
+
+    .column div {
+      margin-bottom: 30px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="left">
-            <div>
-                <div class="horizontal-center">
-                    <h1>Left</h1>
-                </div>
-                <div>
-                    <h3>
-                    text text text text text text text text text text text text text
-                    </h3>
-                </div>
-            </div>
-        </div>
-        <div class="right">
-            <div class="grid1">
-                <h2>Col 1</h2>
-                <h2>Col 2</h2>
-                <h2>Col 3</h2>
-                <h2>Col 1</h2>
-                <h2>Col 2</h2>
-                <h2>Col 3</h2>
-                <h2>Col 1</h2>
-                <h2>Col 2</h2>
-                <h2>Col 3</h2>
-            </div>
-        </div>
-    </div>
-</body>
 
+  <div class="container">
+
+    <div class="left">
+      <h1>Left</h1>
+      <p>
+        text text text text text text text text text text
+        text text
+      </p>
+    </div>
+
+    <div class="right">
+      <div class="column">
+        <div>Col 1</div>
+        <div>Col 1</div>
+        <div>Col 1</div>
+      </div>
+
+      <div class="column">
+        <div>Col 2</div>
+        <div>Col 2</div>
+        <div>Col 2</div>
+      </div>
+
+      <div class="column">
+        <div>Col 3</div>
+        <div>Col 3</div>
+        <div>Col 3</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
 </html>
